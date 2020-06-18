@@ -1,13 +1,14 @@
-html{
+html,body{
     background-image: linear-gradient(45deg, rgb(252, 209, 5) 0%, rgb(252, 209, 5) 6%,rgb(246, 177, 19) 6%, rgb(246, 177, 19) 19%,rgb(240, 146, 32) 19%, rgb(240, 146, 32) 41%,rgb(235, 114, 46) 41%, rgb(235, 114, 46) 55%,rgb(229, 83, 59) 55%, rgb(229, 83, 59) 94%,rgb(223, 51, 73) 94%, rgb(223, 51, 73) 100%);
+    height: 100%;
+    margin: 0;
 }
-
-
 
 #main{
     display: grid;
     justify-items: center;
     grid-gap: 3vh 1vw;
+    margin: 0 0 50px 0;
 
 }
 /*******************************************************************/
@@ -15,39 +16,43 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3em;
     font-weight: 340;
-    width: 60%;
+    padding: 0 0 10px 0;
     text-align: center;
-    color: #4E1319;
+    color: #eee;
     border-bottom-width: 1.5px;
     border-bottom-style: solid;
-    border-bottom-color: rgba(0, 0, 0, 0.616);
+    border-bottom-color: #eee;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
-    text-shadow: 9px 11px 11px black;
+    text-shadow: 9px 11px 11px #000;
 }
 /*******************************************************************/
 #img-div{
-    box-shadow: 0 0 20px 7px rgba(223, 102, 98, 0.747);
+    box-shadow: 0 0 20px 7px rgba(255, 255, 255, 0.15);
     background-color: #ffffff1f;
-
     display: grid;
-    padding: 1.5%;
-    border-radius: 7%;
-    width: 40%;
-    grid-row-gap: 1vh;
+    padding: 10px 50px;
+    border-radius: 3px;
+    width: 300px;
+    /* max-height: 300px; */
+    grid-row-gap: 0;
     grid-template: 1/2;
     grid-template-areas: 
     "image"
     "caption";
     justify-items: center;
+    align-items: center;
+    color: #eee;
+    margin: 0 30px;
 }
 /*******************************************************************/
 #image{
     grid-area: "image";
     width: inherit;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10%;
+    max-width: 300px;
+    /* max-height: 300px; */
+    /* height: auto; */
+    border-radius: 5px;
 }
 #img-caption{
     font-family: Arial, Helvetica, sans-serif;
@@ -56,18 +61,24 @@ html{
 /*******************************************************************/
 #tribute-info{
     font-family: Arial, Helvetica, sans-serif;
-    width: 90%;
-    color: #4E1319;
+    max-width: 900px;
+    width: auto;
+    border-left: 5px solid rgba(238, 238, 238, 0.233);
+    color: #eee;
+    padding: 0 10px;
 }
 /*******************************************************************/
 #tribute-link{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: rgba(45, 11, 30, 0.678);
+    color: #eee;
+    background: rgb(252, 54, 5);
+    padding: 10px 15px;
+    border-radius: 3px;
+    transition: background .4s ;
 }
 #tribute-link:hover{
-    color: #2D0B1E;
-    text-decoration-line: underline;
+    background: rgb(172, 40, 7);
 }
 hr{
     visibility: hidden;
@@ -81,4 +92,39 @@ p{
     #img-div{
         width: 65%;
     }
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 1100px;
+}
+@media only screen and (max-width: 1100px) {
+    
+    #img-div{
+        width: 220px;
+        padding: 50px 100px;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #title{
+        width: 300px;
+    }
+    #img-div{
+        max-width: 300px;
+        padding: 20px 40px;
+    }
+    #image{
+        margin: 20px 0;
+    }
+    #tribute-info{
+        max-width: 300px;
+    }
+    
 }
